@@ -15,4 +15,10 @@ header a{
     font-size: 30px;
     font-weight: 700px;
     text-decoration: none;
+    color: #333333;
+}
+
+header a:hover{
+    text-decoration: underline;
+    
 }
