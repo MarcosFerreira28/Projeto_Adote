@@ -1,0 +1,18 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+header{
+    height: 130px;
+    background-color: #85CDF5;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+header a{
+    font-size: 30px;
+    font-weight: 700px;
+    text-decoration: none;
+}
