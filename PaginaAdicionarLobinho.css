@@ -13,7 +13,7 @@ header{
 
 header a{
     font-size: 30px;
-    font-weight: 700px;
+    font-weight: 700;
     text-decoration: none;
     color: #333333;
 }
@@ -21,4 +21,75 @@ header a{
 header a:hover{
     text-decoration: underline;
     
+}
+
+/* ----------------------------- */
+hr {
+    height: 5px;
+}
+/* ------------------ */
+
+footer {
+    height: 270px;
+    display: flex;
+    flex-direction: row;
+    background-color: #333333;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+footer iframe {
+    width: 250px;
+    height: 168px;
+}
+
+footer div {
+    height: 168px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.contato {
+    width: 378px;
+    height: 102px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+}
+
+.contato div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.contato div img {
+    width: 19px;
+    height: 19px;
+    margin-right: 8px;
+}
+
+.contato div p{
+    font-size: 18px;
+    font-weight: 400;
+    color: #FFFFFF;
+}
+
+.quemsomos{
+    width: 144px;
+    height: 30px;
+    background-color: #DEB959;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.quemsomos a {
+    font-size: 23px;
+    font-weight: 700;
+    color: #353535;
+    text-decoration: none;
 }
