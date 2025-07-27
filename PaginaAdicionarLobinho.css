@@ -44,7 +44,54 @@ main {
     align-content: center;
 }
 
+.infobasica{
+    width: 761px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
 
+.nome {
+    width: 564px;
+    height: 87px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.nome p {
+    font-size: 30px;
+    font-weight: 500;
+    color: black;
+}
+
+.nome input {
+    height: 39px;
+    background-color: #E6E6E6;
+    border-width: 1px;
+    border-color: #000000;
+}
+
+.idade {
+    width: 177px;
+    height: 87px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.idade p {
+    font-size: 30px;
+    font-weight: 500;
+    color: black;
+}
+
+.idade input{
+    height: 39px;
+    background-color: #E6E6E6;
+    border-width: 1px;
+    border-color: #000000;
+}
 
 .link {
     width: 761px;
@@ -57,6 +104,7 @@ main {
 .link p {
     font-size: 30px;
     font-weight: 500;
+    color: black;
 }
 
 .link input {
