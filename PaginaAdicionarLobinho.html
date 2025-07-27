@@ -15,27 +15,27 @@
 
     <main>
         <h1>Coloque um Lobinho para Adoção</h1>
-        <form>
+        <form class="formulario">
             <div>
                 <div>
                     <p>Nome do lobinho:</p>
-                    <input type="text" id="nome">
+                    <input type="text" id="nome" required>
                 </div>
                 <div>
                     <p>Anos:</p>
-                    <input type="text" id="idade">
+                    <input type="text" id="idade" required>
                 </div>
             </div>
             <div>
                 <p>Link da Foto:</p>
-                <input type="text" id="link">
+                <input type="text" id="link" required>
             </div>
-            <div>
+            <div id="descricao">
                 <p>Descrição:</p>
-                <textarea name="" id=""></textarea>
+                <textarea name="" id="" required></textarea>
             </div>
         </form>
-        <button type="submit"></button>
+        <button type="submit">Salvar</button>
     </main>
 
     <hr>
