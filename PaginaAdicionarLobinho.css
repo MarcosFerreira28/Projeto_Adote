@@ -46,7 +46,7 @@ main {
     height: 874px;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     align-content: center;
     border-style: solid;
