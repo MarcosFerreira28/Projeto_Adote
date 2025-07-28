@@ -26,6 +26,74 @@ header a:hover{
 /* ----------------------------------------------------MAIN------------------------------------------ */
 main {
     height: 648px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.formulario{
+    width: 960px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.infobasica {
+    width: 960px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.nome {
+    width: 868px;
+    height: 84px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.nome p {
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.nome input {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-color: #333333;
+    /* padding-left: 5px; */
+}
+
+.nome input:focus{
+    outline: none;
+}
+
+.idade {
+    width: 72px;
+    height: 84px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.idade p {
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.idade input {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-color: #333333;
+    /* padding-left: 5px; */
+}
+
+.idade input:focus{
+    outline: none;
 }
 
 .email {
@@ -33,22 +101,30 @@ main {
     height: 84px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 .email p {
-    font-size: 20px;
+    font-size: 25px;
     font-weight: 500;
 }
 
 .email input {
-    
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-color: #333333;
+    /* padding-left: 5px; */
 }
 
-.formulario button {
+.email input:focus{
+    outline: none;
+}
+
+main button {
     width: 209px;
     height: 60px;
-    font-size: 24px;
+    font-size: 30px;
     font-weight: 600;
     color: white;
     background-color: #2C5680;
