@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./AdicionarLobinho/PaginaAdicionarLobinho.css">
+    <link rel="stylesheet" href="./AdotarLobinho/PaginaAdotarLobinho.css">
 </head>
 <body>
     <header>
@@ -14,29 +14,30 @@
     </header>
 
     <main>
+        <div class="infolobo">
+            <img src="./assets/LOBOTESTE.png" alt="">
+            <div>
+                <h1>Adote nome do lobo</h1>
+                <p>ID lobo</p>
+            </div>
+        </div>
+
         <form class="formulario">
-            <h1>Coloque um Lobinho para Adoção</h1>
-            <div class="grupo">
-                <div class="infobasica">
-                    <div class="nome">
-                        <p>Nome do lobinho:</p>
-                        <input type="text" id="nome" required>
-                    </div>
-                    <div class="idade">
-                        <p>Anos:</p>
-                        <input type="text" id="idade" required>
-                    </div>
+            <div class="infobasica">
+                <div class="nome">
+                    <p>Seu nome:</p>
+                    <input type="text" name="" id="">
                 </div>
-                <div class="link">
-                    <p>Link da Foto:</p>
-                    <input type="text" id="link" required>
-                </div>
-                <div class="descricao">
-                    <p>Descrição:</p>
-                    <textarea name="" id="descricao" required></textarea>
+                <div class="idade">
+                    <p>Idade:</p>
+                    <input type="text" name="" id="">
                 </div>
             </div>
-            <button type="submit" id="salvar">Salvar</button>
+            <div class="email">
+                <p>E-mail:</p>
+                <input type="text" name="" id="">
+            </div>
+            <button type="submit">Adotar</button>
         </form>
     </main>
 
@@ -70,7 +71,5 @@
         </span>
     
     </footer>
-
-    <script src="./AdicionarLobinho/PaginaAdicionarLobinho.js"></script>
 </body>
 </html>
