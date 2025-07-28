@@ -1,60 +1,97 @@
-async function inicializarLocalStorage() {
-  try {
-    const response = await fetch("../localStorage/lobinhos.json"); // Caminho corrigido
-    if (!response.ok) {
-      throw new Error(`Erro ao buscar lobinhos.json: ${response.statusText}`);
-    }
-    const lobos = await response.json();
-    localStorage.setItem("lobos", JSON.stringify(lobos));
-    console.log("🐺 Lobos inicializados no localStorage");
-  } catch (error) {
-    console.error("Erro ao inicializar o localStorage:", error);
-  } finally {
-    console.log("Tentativa de inicialização do localStorage concluída");
-  }
+function inicializarLocalStorage() {
+  fetch("../localStorage/lobinhos.json")
+    .then(response => response.json())
+    .then(data => {
+      localStorage.setItem("lobos", JSON.stringify(data));
+      exibirLobo(); r
+    })
+    .catch(error => {
+      console.error("Erro ao carregar lobinhos:", error);
+    });
 }
 
-async function exibirLobo() {
-  if (!localStorage.getItem("lobos")) {
-    await inicializarLocalStorage();
-  }
 
+function exibirLobo() {
   let lobos = JSON.parse(localStorage.getItem("lobos")) || [];
 
   const params = new URLSearchParams(window.location.search);
   const id = parseInt(params.get("id"));
-
   const lobo = lobos.find(l => l.id === id);
 
   const container = document.getElementById("detalhes-lobinho");
+  container.innerHTML = ""; 
 
   if (!lobo) {
-    container.innerHTML = `
-      <section class="lobo-detalhe">
-        <h1>Lobinho não encontrado</h1>
-        <p>O lobinho com esse ID não existe ou foi removido.</p>
-        <button onclick="window.location.href='PaginaListaLobinhos.html'">Voltar para lista</button>
-      </section>
-    `;
+    const erro = document.createElement("section");
+    erro.classList.add("lobo-detalhe");
+
+    const titulo = document.createElement("h1");
+    titulo.innerText = "Lobinho não encontrado";
+
+    const texto = document.createElement("p");
+    texto.innerText = "O lobinho com esse ID não existe ou foi removido.";
+
+    const voltar = document.createElement("button");
+    voltar.innerText = "Voltar para a lista";
+    voltar.addEventListener("click", () => {
+      window.location.href = "PaginaListaLobinhos.html";
+    });
+
+    erro.appendChild(titulo);
+    erro.appendChild(texto);
+    erro.appendChild(voltar);
+    container.appendChild(erro);
     return;
   }
 
-  container.innerHTML = `
-    <section class="lobo-detalhe">
-      <h1>${lobo.nome}</h1>
-      <img src="${lobo.imagem}" alt="${lobo.nome}" />
-      <p><strong>Idade:</strong> ${lobo.idade} anos</p>
-      <p>${lobo.descricao}</p>
+ 
+  const section = document.createElement("section");
+  section.classList.add("lobo-detalhe");
 
-      ${lobo.adotado ? `
-        <p><strong>Adotado por:</strong> ${lobo.nomeDono} (${lobo.idadeDono} anos) - ${lobo.emailDono}</p>
-      ` : `
-        <button class="btn-adotar" onclick="location.href='PaginaAdotarLobinho.html?id=${lobo.id}'">Adotar</button>
-        <button class="btn-excluir" onclick="excluirLobo(${lobo.id})">Excluir</button>
-      `}
-    </section>
-  `;
+  const titulo = document.createElement("h1");
+  titulo.innerText = lobo.nome;
+
+  const imagem = document.createElement("img");
+  imagem.src = lobo.imagem;
+  imagem.alt = lobo.nome;
+
+  const idade = document.createElement("p");
+  idade.innerHTML = `<strong>Idade:</strong> ${lobo.idade} anos`;
+
+  const descricao = document.createElement("p");
+  descricao.innerText = lobo.descricao;
+
+  section.appendChild(titulo);
+  section.appendChild(imagem);
+  section.appendChild(idade);
+  section.appendChild(descricao);
+
+  if (lobo.adotado) {
+    const adotado = document.createElement("p");
+    adotado.innerHTML = `<strong>Adotado por:</strong> ${lobo.nomeDono} (${lobo.idadeDono} anos) - ${lobo.emailDono}`;
+    section.appendChild(adotado);
+  } else {
+    const btnAdotar = document.createElement("button");
+    btnAdotar.classList.add("btn-adotar");
+    btnAdotar.innerText = "Adotar";
+    btnAdotar.addEventListener("click", () => {
+      window.location.href = `PaginaAdotarLobinho.html?id=${lobo.id}`;
+    });
+
+    const btnExcluir = document.createElement("button");
+    btnExcluir.classList.add("btn-excluir");
+    btnExcluir.innerText = "Excluir";
+    btnExcluir.addEventListener("click", () => {
+      excluirLobo(lobo.id);
+    });
+
+    section.appendChild(btnAdotar);
+    section.appendChild(btnExcluir);
+  }
+
+  container.appendChild(section);
 }
+
 
 function excluirLobo(id) {
   let lobos = JSON.parse(localStorage.getItem("lobos")) || [];
@@ -63,4 +100,11 @@ function excluirLobo(id) {
   window.location.href = "PaginaListaLobinhos.html";
 }
 
-window.onload = exibirLobo;
+// Espera o DOM estar pronto
+document.addEventListener("DOMContentLoaded", () => {
+  if (!localStorage.getItem("lobos")) {
+    inicializarLocalStorage();
+  } else {
+    exibirLobo();
+  }
+});
