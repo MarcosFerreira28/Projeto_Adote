@@ -48,6 +48,7 @@ main {
 .infolobo div h1 {
     font-size: 60px;
     font-weight: 600;
+    margin-bottom: 10px;
 }
 
 .infolobo div p {
