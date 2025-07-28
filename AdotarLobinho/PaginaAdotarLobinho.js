@@ -8,12 +8,11 @@ let nome = document.querySelector("#nomelobo")
 let id = document.querySelector("#idlobo")
 
 function ColocaDadosLobo(){
-    let lobo = lobos[idLobo - 1];
+    let lobo = lobos.find(l => l.id === idLobo);
 
-
-
+    imagem.src = lobo.imagem
     nome.innerText = "Adote o(a) " + lobo.nome;
-
+    id.innerText = "ID: " + lobo.id
 }
 
 ColocaDadosLobo()
