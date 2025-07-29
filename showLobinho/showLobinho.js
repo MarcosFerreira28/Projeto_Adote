@@ -34,7 +34,7 @@ function exibirLobo() {
     const voltar = document.createElement("button");
     voltar.innerText = "Voltar para a lista";
     voltar.addEventListener("click", () => {
-      window.location.href = "PaginaListaLobinhos.html";
+      window.location.href = "ListaLobinhos.html";
     });
 
     erro.appendChild(titulo);
@@ -97,10 +97,9 @@ function excluirLobo(id) {
   let lobos = JSON.parse(localStorage.getItem("lobos")) || [];
   lobos = lobos.filter(l => l.id !== id);
   localStorage.setItem("lobos", JSON.stringify(lobos));
-  window.location.href = "PaginaListaLobinhos.html";
+  window.location.href = "ListaLobinhos.html";
 }
 
-// Espera o DOM estar pronto
 document.addEventListener("DOMContentLoaded", () => {
   if (!localStorage.getItem("lobos")) {
     inicializarLocalStorage();
