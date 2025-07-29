@@ -1,0 +1,415 @@
+/*Global*/
+* {
+    padding: 0;
+    margin: 0;
+}
+
+/*Fechamento do global*/
+
+/* Header */
+header {
+    height: 130px;
+    background-color: #85CDF5;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+header a {
+    font-size: 30px;
+    font-weight: 700;
+    text-decoration: none;
+    color: #333333;
+}
+
+header a:hover {
+    text-decoration: underline;
+
+}
+
+/*Fechamento header */
+
+/* ----------------------------------------------------MAIN------------------------------------------ */
+main {
+    height: 100%;
+
+
+}
+
+/*Parte do filtro e adicionar lobo*/
+
+.filtro {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.filtro #buscaNome {
+    width: 700px;
+    height: 100%;
+    border: 1px solid rgb(255, 255, 255);
+
+}
+
+.pesquisar {
+    border: 1px black solid;
+    height: 100%;
+    margin-top: 15px;
+    width: 800px;
+    display: flex;
+
+
+}
+
+#btnAdicionarLobinho {
+    height: 34px;
+    background-color: #DEB959;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    font-size: 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.pesquisar img {
+    width: 30px;
+    height: 30px;
+}
+
+#buscaNome {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 16px;
+    padding: 6px 4px;
+}
+
+
+
+
+/*Final da parte do filtro de nome e adicionar lobo*/
+
+/*Parte do filtro de adoção*/
+
+.adocao {
+    margin-top: 15px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    margin-left: 24%
+}
+
+.adocao #filtroAdotados {
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: white;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.adocao #filtroAdotados.ativo {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+/* Final do filtro de adoção */
+
+/* Botão formulário para adicionar */
+.formulario {
+    width: 960px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Botões de avançar e voltar */
+
+.botao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14;
+    margin-top: 50px;
+
+}
+
+.botao div {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14;
+    padding: 5px 13px;
+
+}
+
+/* Finais dos Botões de avançar e voltar */
+
+/* Mexendo com o HTML através do script de imagens*/
+
+.container {
+    display: flex;
+    gap: 40px;
+}
+
+.imagemLobo {
+    position: relative;
+    width: 430px;
+    height: 328px;
+}
+
+.fundoAzul {
+    background-color: #2C5680;
+    z-index: 1;
+    width: 430px;
+    height: 328px;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+}
+
+.imagem {
+    position: absolute;
+    z-index: 2;
+    top: 32px;
+    left: 32px;
+
+}
+
+.imagem img {
+    width: 430px;
+    height: 328px;
+    object-fit: cover;
+}
+
+.container {
+    margin-top: 100px;
+    justify-content: center;
+}
+
+.topo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.nomeLobo {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+}
+
+
+
+.escrita {
+    width: 478px;
+    height: 339px;
+}
+
+.adotar {
+    padding: 6px 14px;
+    background-color: #d4a44f;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 150px;
+    height: 45px;
+
+}
+
+.adotar.adotado {
+    background-color: #4CAF50;
+    /* verde */
+    cursor: default;
+}
+
+
+
+
+
+
+
+/*Trabalhando os lados das imaagens*/
+/*Geral*/
+.texto .idade {
+    color: rgba(0, 0, 0, 0.735);
+    margin-bottom: 10px;
+}
+
+/*Lado Direito*/
+.ladoDireito .container {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 50px;
+}
+
+
+.ladoDireito .imagem {
+    position: absolute;
+    z-index: 2;
+    left: -32px;
+
+}
+
+.ladoDireito .topo {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.ladoDireito .descricao,
+.idade {
+    text-align: end;
+}
+
+/*Lado Esquerdo*/
+.ladoEsquerdo .imagemLobo {
+    display: flex;
+    flex-direction: reverse;
+
+}
+
+
+.ladoEsquerdo .imagem {
+    left: 32px;
+    top: 32px;
+
+}
+
+.ladoEsquerdo .container {
+    display: flex;
+    flex-direction: reverse;
+    gap: 50px;
+}
+
+.ladoEsquerdo .descricao,
+.ladoEsquerdo .idade {
+    text-align: start;
+}
+/* Final do Mexendo com o HTML através do script de imagens*/
+
+/*Mexendo na numeração da paginação*/
+#exibir div {
+    padding: 6px 12px;
+    margin: 2px;
+    cursor: pointer;
+
+}
+
+#exibir div.ativo {
+    background-color: #DEB959;
+    /* amarelo */
+    color: rgb(0, 0, 0);
+
+}
+/*Final da Mexendo na numeração da paginação*/
+
+
+/* ------------------FOOTER------------------------------------------------ */
+
+footer {
+    height: 270px;
+    display: flex;
+    flex-direction: row;
+    background-color: #333333;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+footer iframe {
+    width: 250px;
+    height: 168px;
+    padding-right: 30px;
+}
+
+footer div {
+    height: 168px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-right: 70px;
+}
+
+.esquerda {
+    display: flex;
+    flex-direction: row;
+}
+
+.contato {
+    width: 378px;
+    height: 102px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
+}
+
+.contato div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding-right: 0px;
+}
+
+.contato div img {
+    width: 19px;
+    height: 19px;
+    margin-right: 8px;
+}
+
+.contato div p{
+    font-size: 18px;
+    font-weight: 400;
+    color: #FFFFFF;
+}
+
+.quemsomos{
+    width: 144px;
+    height: 30px;
+    background-color: #DEB959;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 0px;
+}
+
+.quemsomos a {
+    font-size: 23px;
+    font-weight: 700;
+    color: #353535;
+    text-decoration: none;
+}
+
+.patas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 33px;
+}
+
+.patas p {
+    font-size: 18px;
+    color: #FFFFFF;
+    font-weight: 400;
+    padding-bottom: 10px;
+}
+
+/*Final header e footer*/
