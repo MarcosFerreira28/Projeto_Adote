@@ -58,8 +58,26 @@ let controls = {
 
     },
     buscarNome() {
-        estado.termoBusca = pegar("#buscaNome").value.toLowerCase();
+        const input = pegar("#buscaNome");
+        const termo = input.value.toLowerCase().trim();
+
+        estado.termoBusca = termo;
         estado.pagina = 1;
+
+        const encontrou = lobos.some(lobo => lobo.nome.toLowerCase().includes(termo));
+
+        if (!encontrou && termo !== "") {
+            alert("Nenhum lobinho com esse nome foi encontrado!");
+
+            // Limpa a busca
+            input.value = "";
+            estado.termoBusca = "";
+
+            // Atualiza a lista completa
+            update();
+            return; // Interrompe aqui para não aplicar filtro
+        }
+
         update();
     },
     eventoClickar() {
@@ -70,7 +88,12 @@ let controls = {
             if (e.key === "Enter") {
                 controls.buscarNome();
             }
-        });//Apertar enter para filtrar
+        });//aperta enter para filtrar
+
+        pegar(".lupinha").addEventListener("click", () => {
+            controls.buscarNome();
+        });//Apertar lupa para filtrar
+
         pegar("#btnAdicionarLobinho").addEventListener("click", () => {
             window.location.href = "PaginaAdicionarLobinho.html";
         });//Botão de +adicionar para levar a outra pagina

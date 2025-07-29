@@ -1,15 +1,3 @@
-function inicializarLocalStorage() {
-  fetch("../localStorage/lobinhos.json")
-    .then(response => response.json())
-    .then(data => {
-      localStorage.setItem("lobos", JSON.stringify(data));
-      exibirLobo();
-    })
-    .catch(error => {
-      console.error("Erro ao carregar lobinhos:", error);
-    });
-}
-
 function exibirLobo() {
   const lobos = JSON.parse(localStorage.getItem("lobos")) || [];
   const params = new URLSearchParams(window.location.search);
@@ -121,10 +109,4 @@ function excluirLobo(id) {
   window.location.href = "ListaLobinhos.html";
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  if (!localStorage.getItem("lobos")) {
-    inicializarLocalStorage();
-  } else {
-    exibirLobo();
-  }
-});
+exibirLobo();

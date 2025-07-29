@@ -32,15 +32,29 @@ function AdotaLobo(){
     lobo.nomeDono = nome.value;
     lobo.adotado = true;
 
+    /*-------------Validando Nome----------------------*/
+    if (!/^[A-Za-zÀ-ÿ\s]{2,}$/.test(lobo.nomeDono)) {
+        alert("O nome deve conter apenas letras e ter pelo menos 2 caracteres.");
+        window.location.href="PaginaAdotarLobinho.html?id=" + lobo.id;
+        return
+    }
+
+    /*-------------Validando Idade----------------------*/
     if (!Number.isInteger(lobo.idadeDono)){
         alert("Idade deve ser um inteiro!");
         window.location.href="PaginaAdotarLobinho.html?id=" + lobo.id;
         return
     }
 
-    if (nome.value.trim() == "" || idade.value.trim() == "" || email.value.trim() == ""){
+    /*-------------Validando Email----------------------*/
+    const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!regexEmail.test(lobo.emailDono)) {
+        alert("Digite um e-mail válido.");
+        window.location.href="PaginaAdotarLobinho.html?id=" + lobo.id;
         return
     }
+
+    /*-------------------------------------------------*/
 
     localStorage.setItem("lobos", JSON.stringify(lobos))
     
