@@ -67,10 +67,11 @@ main {
 
 .botoes {
    display: flex;
-  gap: 24px;
+  gap: 38px;
   margin-top: 0;
     justify-content: center;
-    width: 100%;
+    width: 90%;
+    
 }
 .btn-adotar,
 .btn-excluir {
@@ -85,6 +86,9 @@ margin-top: 50px;
     height: 56px;
     top: 684px;
     left: 29px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
 }
 
@@ -123,7 +127,8 @@ opacity: 1;
 }
 
 .lobo-info p {
-  font-size: 16px;
+  padding-top: 37px;
+    font-size: 16px;
   color: #444;
   line-height: 1.5;
   margin-bottom: 12px;
