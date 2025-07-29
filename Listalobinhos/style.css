@@ -1,10 +1,10 @@
-
 /*Global*/
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
+
 /*Fechamento do global*/
 
 /* Header */
@@ -68,7 +68,7 @@ main {
     color: white;
     padding: 10px 20px;
     border: none;
-    font-size: 16px;
+    font-size: 20px;
     border-radius: 4px;
     cursor: pointer;
     margin-top: 15px;
@@ -100,6 +100,7 @@ main {
     gap: 35px;
     margin-left: 24%
 }
+
 .adocao #filtroAdotados {
     width: 30px;
     height: 30px;
@@ -110,6 +111,7 @@ main {
     cursor: pointer;
     transition: all 0.3s ease;
 }
+
 .adocao #filtroAdotados.ativo {
     background-color: #007bff;
     color: white;
@@ -148,9 +150,10 @@ main {
     padding: 5px 13px;
 
 }
+
 /* Finais dos Botões de avançar e voltar */
 
-/* Mexendo com o script de imagens*/
+/* Mexendo com o HTML através do script de imagens*/
 
 .container {
     display: flex;
@@ -206,15 +209,7 @@ main {
     margin: 0;
 }
 
-.adotar {
-    padding: 6px 14px;
-    background-color: #d4a44f;
-    border: none;
-    color: white;
-    cursor: pointer;
-    font-weight: bold;
 
-}
 
 .escrita {
     width: 478px;
@@ -222,6 +217,7 @@ main {
 }
 
 .adotar {
+    padding: 6px 14px;
     background-color: #d4a44f;
     border: none;
     color: white;
@@ -244,7 +240,8 @@ main {
 
 
 
-/*Trabalhando os lados*/
+
+/*Trabalhando os lados das imaagens*/
 /*Geral*/
 .texto .idade {
     color: rgba(0, 0, 0, 0.735);
@@ -303,11 +300,11 @@ main {
 .ladoEsquerdo .idade {
     text-align: start;
 }
+/* Final do Mexendo com o HTML através do script de imagens*/
 
-/*Ativação da pagina atual*/
+/*Mexendo na numeração da paginação*/
 #exibir div {
     padding: 6px 12px;
-
     margin: 2px;
     cursor: pointer;
 
@@ -319,6 +316,7 @@ main {
     color: rgb(0, 0, 0);
 
 }
+/*Final da Mexendo na numeração da paginação*/
 
 
 /* ------------------FOOTER------------------------------------------------ */
@@ -391,12 +389,13 @@ footer div {
     color: #353535;
     text-decoration: none;
 }
-.esquerda{
+
+.esquerda {
     display: flex;
     flex-direction: row;
 }
 
-.direita{
+.direita {
     display: flex;
     flex-direction: column;
     align-items: center;

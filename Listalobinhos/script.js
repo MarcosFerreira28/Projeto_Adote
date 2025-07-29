@@ -72,7 +72,7 @@ let controls = {
             }
         });//Apertar enter para filtrar
         pegar("#btnAdicionarLobinho").addEventListener("click", () => {
-            window.open("PaginaAdicionarLobinho.html", "_blank");
+            window.location.href = "PaginaAdicionarLobinho.html";
         });//Botão de +adicionar para levar a outra pagina
         pegar("#filtroAdotados").addEventListener("click", () => {
             const botao = pegar("#filtroAdotados")
