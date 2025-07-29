@@ -1,0 +1,362 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+@import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300;400;500;600;700;800;900&display=swap');
+
+header{
+    height: 130px;
+    background-color: #85CDF5;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+header a{
+    font-size: 30px;
+    font-weight: 700;
+    text-decoration: none;
+    color: #333333;
+}
+
+header a:hover{
+    text-decoration: underline;
+    
+}
+
+/* ------------------------- MAIN ------------------------- */
+/* ------------------------- DIV1 ------------------------- */
+.div1{
+    position: relative;
+    background-image: url("../assets/LobinhoHome.png");
+    background-size: cover;
+    background-position: 0% 73%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.div1 h1{
+font-family: 'Darker Grotesque', sans-serif;
+font-weight: 700;
+font-size: 80px;
+line-height: 100%;
+letter-spacing: 0%;
+text-align: center;
+padding: 0 0 1rem 0;
+}
+
+.linha{
+    width: 80px;
+    border: none;
+    height: 4px;
+    background-color: #FFFFFF;
+    margin: 16px auto;
+}
+.div1 h1,.sub{
+    color:white;
+    text-align: center;
+    position: relative;
+    z-index:1;
+}
+.sub{
+    font-family: 'Darker Grotesque', sans-serif;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 25px;
+    letter-spacing: 0%;
+    text-align: center;
+    padding: 0rem 22rem;
+}
+
+.hero::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.4); 
+    z-index: 0;
+}
+/* ------------------------- DIV2 ------------------------- */
+.div2{
+    background: #2C5680;
+    position: relative;
+    height: 333px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.div2 h3{
+    font-family: 'Darker Grotesque', sans-serif;
+    color: #DEB959;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    padding: 1.5rem;
+    
+
+}
+.div2 p{
+    font-family: 'Darker Grotesque', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    color: #FFFFFF;
+    padding: 0 10rem;
+    text-align: center;
+
+}
+/* ------------------------- DIV3 ------------------------- */
+.div3{
+    display: flex;
+    flex-direction: column;
+    background: #333333;
+    text-align: center;
+}
+.primeira{
+    font-family: 'Darker Grotesque', sans-serif;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #DEB959;
+    padding:3rem 0 1rem 0;
+}
+.segunda{
+    display: flex;
+    flex-direction: row;
+    padding: 0 0 5rem 0
+}
+.valor{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 25%;
+}
+.valor h4{
+    font-family: 'Darker Grotesque', sans-serif;
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    color: #FFFFFF;
+
+}
+.valor p{
+    font-family: 'Darker Grotesque', sans-serif;
+    font-weight: 200;
+    font-size: 24px;
+    line-height: 20px;
+    letter-spacing: 0%;
+    text-align: center;
+    vertical-align: middle;
+    color: #FFFFFF;
+    padding: 1rem 3rem;
+    text-align: center;
+    
+}
+.img{
+    width: 140px;
+    height: 140px;
+    background: #fff; 
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08); 
+}
+
+.img img{
+    width: 100px;
+    height: 100px;
+    padding: 20px;
+}
+/* ------------------------- DIV4 ------------------------- */
+.div4{
+    height: 1040px;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 1rem 7rem;
+
+}
+
+.div4 h4{
+    font-family: 'Darker Grotesque', sans-serif;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color:#DEB959;
+    text-align: center;
+}
+
+.lobao{
+    display: flex;
+    flex-direction: column;
+}
+.loboTotal1,.loboTotal2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 361px;
+    position: relative;
+    padding: 2.5rem 0 2.5rem 0
+    
+}
+.loboTotal1{
+    text-align: start;
+}
+.loboTotal2{
+    text-align: end;
+}
+.lobo1,.lobo2{
+    position: relative;
+}
+.text{
+    width: 461px;
+    height: 339px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+
+
+}
+.text h5{
+    font-family: 'Darker Grotesque', sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    
+
+}
+.idade{
+    font-family: 'Darker Grotesque', sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    padding: 1rem 0rem 2rem 0rem;
+}
+.desc{
+    font-family: 'Darker Grotesque', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+
+}
+.lobinho{
+    width: 430px;
+    height: 328px;
+}
+
+.fundoAzul{
+    z-index: 1;
+    width: 430px;
+    height: 328px;
+    background-color: #2C5680;
+    border: 4px solid #333333;
+    top: 0;
+    left: 0;
+}
+.imgLobo{
+    z-index: 2;
+    top: 32px;
+    left: 32px;
+    position: absolute;
+}
+
+/* ------------------------------------------------------------------- */
+
+footer {
+    height: 270px;
+    display: flex;
+    flex-direction: row;
+    background-color: #333333;
+    align-items: center;
+    justify-content: center;
+}
+
+footer iframe {
+    width: 250px;
+    height: 168px;
+    padding-right: 30px;
+}
+
+footer div {
+    height: 168px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-right: 70px;
+}
+
+.contato {
+    width: 378px;
+    height: 102px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
+}
+
+.contato div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding-right: 0px;
+}
+
+.contato div img {
+    width: 19px;
+    height: 19px;
+    margin-right: 8px;
+}
+
+.contato div p{
+    font-size: 18px;
+    font-weight: 400;
+    color: #FFFFFF;
+}
+
+.quemsomos{
+    width: 144px;
+    height: 30px;
+    background-color: #DEB959;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 0px;
+}
+
+.quemsomos a {
+    font-size: 23px;
+    font-weight: 700;
+    color: #353535;
+    text-decoration: none;
+}
+
+footer span {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 33px;
+}
+
+footer span p {
+    font-size: 18px;
+    color: #FFFFFF;
+    font-weight: 400;
+    padding-bottom: 10px;
+}
