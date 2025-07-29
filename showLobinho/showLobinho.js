@@ -42,18 +42,36 @@ function exibirLobo() {
     return;
   }
 
+  // WRAPPER PRINCIPAL (título + container)
   const wrapper = document.createElement("div");
-  wrapper.classList.add("lobo-container");
+  wrapper.classList.add("lobo-wrapper");
 
-  // Coluna da esquerda: imagem + botões
-  const esquerda = document.createElement("div");
-  esquerda.classList.add("lobo-foto");
+  // TÍTULO CENTRALIZADO
+  const titulo = document.createElement("h1");
+  titulo.classList.add("titulo-lobo");
+  titulo.innerText = lobo.nome;
+  wrapper.appendChild(titulo);
 
-  const imagem = document.createElement("img");
-  imagem.src = lobo.imagem;
-  imagem.alt = lobo.nome;
-  esquerda.appendChild(imagem);
+  // CONTAINER EM DUAS COLUNAS
+  const loboContainer = document.createElement("div");
+  loboContainer.classList.add("lobo-container");
 
+  // COLUNA ESQUERDA (imagem + botões)
+  const colunaEsquerda = document.createElement("div");
+  colunaEsquerda.classList.add("lobo-foto");
+
+  const imagemWrapper = document.createElement("div");
+  imagemWrapper.classList.add("imagem-wrapper");
+
+const imagem = document.createElement("img");
+imagem.src = lobo.imagem;
+imagem.alt = lobo.nome;
+
+imagemWrapper.appendChild(imagem);
+colunaEsquerda.appendChild(imagemWrapper);
+
+//
+  if (!lobo.adotado) {
   const botoes = document.createElement("div");
   botoes.classList.add("botoes");
 
@@ -73,14 +91,13 @@ function exibirLobo() {
 
   botoes.appendChild(btnAdotar);
   botoes.appendChild(btnExcluir);
-  esquerda.appendChild(botoes);
+  colunaEsquerda.appendChild(botoes);
+}
 
-  // Coluna da direita: textos
-  const direita = document.createElement("div");
-  direita.classList.add("lobo-info");
-
-  const titulo = document.createElement("h1");
-  titulo.innerText = lobo.nome;
+//
+  // COLUNA DIREITA (idade + descrição + adoção)
+  const colunaDireita = document.createElement("div");
+  colunaDireita.classList.add("lobo-info");
 
   const idade = document.createElement("p");
   idade.innerHTML = `<strong>Idade:</strong> ${lobo.idade} anos`;
@@ -88,18 +105,21 @@ function exibirLobo() {
   const descricao = document.createElement("p");
   descricao.innerText = lobo.descricao;
 
-  direita.appendChild(titulo);
-  direita.appendChild(idade);
-  direita.appendChild(descricao);
+  colunaDireita.appendChild(idade);
+  colunaDireita.appendChild(descricao);
 
   if (lobo.adotado) {
     const adotado = document.createElement("p");
     adotado.innerHTML = `<strong>Adotado por:</strong> ${lobo.nomeDono} (${lobo.idadeDono} anos) - ${lobo.emailDono}`;
-    direita.appendChild(adotado);
+    colunaDireita.appendChild(adotado);
   }
 
-  wrapper.appendChild(esquerda);
-  wrapper.appendChild(direita);
+  // Monta as colunas no container
+  loboContainer.appendChild(colunaEsquerda);
+  loboContainer.appendChild(colunaDireita);
+
+  // Monta o wrapper com título + container
+  wrapper.appendChild(loboContainer);
   container.appendChild(wrapper);
 }
 

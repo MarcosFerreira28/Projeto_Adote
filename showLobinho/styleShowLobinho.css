@@ -42,12 +42,11 @@ main {
 
 .lobo-container {
   display: flex;
-  width: 1001px;
-  height: 530px;
-  margin-top: 272px;
-  gap: 24px;
+  gap: 32px;
   justify-content: center;
   align-items: flex-start;
+  max-width: 1001px;
+  width: 100%;
 }
 
 .lobo-foto {
@@ -61,7 +60,6 @@ main {
   width: 654px;
   height: 436px;
   object-fit: cover;
-  border-radius: 12px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   margin-bottom: 16px;
 
@@ -71,17 +69,24 @@ main {
    display: flex;
   gap: 24px;
   margin-top: 0;
-  }
+    justify-content: center;
+    width: 100%;
+}
 .btn-adotar,
 .btn-excluir {
   font-size: 18px;
   font-weight: 700;
-  padding: 14px 36px;
+  padding: 8px 36px;
   border: none;
-  border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.2s ease; 
- }
+margin-top: 50px;
+  width: 180px;
+    height: 56px;
+    top: 684px;
+    left: 29px;
+
+}
 
 .btn-adotar {
   background-color: #6cc070;
@@ -102,10 +107,13 @@ main {
 }
 
 .lobo-info {
-  width: 478px;
-  font-size: 24px;
-  line-height: 20px;
-  color: #444;
+ width: 478px;
+height: 497px;
+top: 305px;
+left: 701px;
+angle: 0 deg;
+opacity: 1;
+
 }
 
 .lobo-info h1 {
@@ -131,7 +139,7 @@ footer {
   margin-top: auto;
 }
 
-/* Mantém seu estilo anterior de footer */
+
 footer iframe {
   width: 250px;
   height: 168px;
@@ -202,3 +210,40 @@ footer span p {
   font-weight: 400;
   padding-bottom: 10px;
 }
+
+.lobo-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+    width: 100%;
+}
+
+.titulo-lobo {
+  font-size: 42px;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 0px;  
+  margin-bottom: 40px;
+}
+
+.imagem-wrapper {
+  position: relative;
+  width: 430px;
+  height: 328px;
+  background-color: #2C5680;
+  border: 4px solid #333333;
+  box-sizing: border-box;
+}
+
+.imagem-wrapper img {
+  position: absolute;
+  top: 30px;  /* você pode ajustar esse valor se necessário */
+  left: 30px;  /* idem */
+  width: 430px;
+  height: 328px;
+  object-fit: cover;
+  
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
