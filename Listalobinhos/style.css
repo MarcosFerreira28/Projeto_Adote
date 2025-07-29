@@ -2,7 +2,6 @@
 * {
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
 }
 
 /*Fechamento do global*/
@@ -41,7 +40,7 @@ main {
 
 .filtro {
     display: flex;
-
+    gap: 20px;
     justify-content: center;
 }
 
@@ -56,7 +55,6 @@ main {
     border: 1px black solid;
     height: 100%;
     margin-top: 15px;
-    margin-right: 100px;
     width: 800px;
     display: flex;
 
@@ -64,6 +62,7 @@ main {
 }
 
 #btnAdicionarLobinho {
+    height: 34px;
     background-color: #DEB959;
     color: white;
     padding: 10px 20px;
@@ -72,6 +71,8 @@ main {
     border-radius: 4px;
     cursor: pointer;
     margin-top: 15px;
+    display: flex;
+    align-items: center;
 }
 
 .pesquisar img {
@@ -96,7 +97,9 @@ main {
 
 .adocao {
     margin-top: 15px;
+    font-size: 18px;
     display: flex;
+    align-items: center;
     gap: 35px;
     margin-left: 24%
 }
@@ -344,13 +347,18 @@ footer div {
     padding-right: 70px;
 }
 
+.esquerda {
+    display: flex;
+    flex-direction: row;
+}
+
 .contato {
     width: 378px;
     height: 102px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-
+    
 }
 
 .contato div {
@@ -367,13 +375,13 @@ footer div {
     margin-right: 8px;
 }
 
-.contato div p {
+.contato div p{
     font-size: 18px;
     font-weight: 400;
     color: #FFFFFF;
 }
 
-.quemsomos {
+.quemsomos{
     width: 144px;
     height: 30px;
     background-color: #DEB959;
@@ -390,19 +398,14 @@ footer div {
     text-decoration: none;
 }
 
-.esquerda {
-    display: flex;
-    flex-direction: row;
-}
-
-.direita {
+.patas {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 33px;
 }
 
-.direita p {
+.patas p {
     font-size: 18px;
     color: #FFFFFF;
     font-weight: 400;

@@ -284,7 +284,7 @@ footer {
     flex-direction: row;
     background-color: #333333;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 footer iframe {
@@ -299,6 +299,11 @@ footer div {
     flex-direction: column;
     justify-content: space-between;
     padding-right: 70px;
+}
+
+.esquerda {
+    display: flex;
+    flex-direction: row;
 }
 
 .contato {
@@ -347,14 +352,14 @@ footer div {
     text-decoration: none;
 }
 
-footer span {
+.patas {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 33px;
 }
 
-footer span p {
+.patas p {
     font-size: 18px;
     color: #FFFFFF;
     font-weight: 400;
