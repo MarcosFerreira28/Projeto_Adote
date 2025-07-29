@@ -20,6 +20,7 @@ header a{
     text-decoration: none;
     color: #333333;
     padding-bottom: 5px;
+    font-family: 'Darker Grotesque', sans-serif;
 }
 header a.navlink::after {
     content: "";
@@ -39,28 +40,29 @@ header a.navlink:hover::after {
 /* ------------------------------------------------------------------------- */
 
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #FAFAFA;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+    font-family: Roboto;
+    background-color: #FAFAFA;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 main {
-  flex: 1;
-  padding: 40px;
-  display: flex;
-  justify-content: center;
-  background-color: #FAFAFA;
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    background-color: #FAFAFA;
+
 }
 
 .lobo-container {
-  display: flex;
-  gap: 32px;
-  justify-content: center;
-  align-items: flex-start;
-  max-width: 1001px;
-  width: 100%;
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 1001px;
+    width: 100%;
 }
 
 .lobo-foto {
@@ -144,6 +146,7 @@ main {
   color: #444;
   line-height: 1.5;
   margin-bottom: 12px;
+  font-family: 'Darker Grotesque', sans-serif;
 }
 
 /* ------------------------- MAIN ------------------------- */
@@ -495,11 +498,11 @@ footer div {
 }
 
 .lobo-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
+    justify-content: space-evenly;
 }
 
 .titulo-lobo {

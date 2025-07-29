@@ -20,6 +20,7 @@ header a{
     text-decoration: none;
     color: #333333;
     padding-bottom: 5px;
+    font-family: 'Darker Grotesque', sans-serif;
 }
 header a.navlink::after {
     content: "";
