@@ -1,48 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./AdicionarLobinho/PaginaAdicionarLobinho.css">
+  <meta charset="UTF-8" />
+  <title>Show Lobinho</title>
+  <link rel="stylesheet" href="showLobinho/styleShowLobinho.css" />
 </head>
 <body>
-    <header>
-        <a href="ListaLobinhos.html">Nossos Lobinhos</a>
-        <a href="PaginaHome.html"><img src="./assets/loboicon.png" alt="Lobinho"></a>
-        <a href="PaginaQuemSomos.html">Quem Somos</a>
-    </header>
+  <header>
+    <a href="ListaLobinhos.html">Nossos Lobinhos</a>
+    <a href="PaginaHome.html"><img src="./assets/loboicon.png" alt="Lobinho"></a>
+    <a href="PaginaQuemSomos.html">Quem Somos</a>
+  </header>
 
-    <main>
-        <form class="formulario">
-            <h1>Coloque um Lobinho para Adoção</h1>
-            <div class="grupo">
-                <div class="infobasica">
-                    <div class="nome">
-                        <p>Nome do lobinho:</p>
-                        <input type="text" id="nome" required>
-                    </div>
-                    <div class="idade">
-                        <p>Anos:</p>
-                        <input type="text" id="idade" required>
-                    </div>
-                </div>
-                <div class="link">
-                    <p>Link da Foto:</p>
-                    <input type="text" id="link" required>
-                </div>
-                <div class="descricao">
-                    <p>Descrição:</p>
-                    <textarea name="" id="descricao" required></textarea>
-                </div>
-            </div>
-            <button type="submit" id="salvar">Salvar</button>
-        </form>
-    </main>
-
-    <hr>
+  <main id="detalhes-lobinho">
     
-    <footer>
+  </main>
+
+  <footer>
         <span class="esquerda">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3675.1873241132716!2d-43.135835125815646!3d-22.906460537857185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x99817e444e692b%3A0xfd5e35fb577af2f5!2sUFF%20-%20Instituto%20de%20Computa%C3%A7%C3%A3o!5e0!3m2!1spt-BR!2sbr!4v1753148190660!5m2!1spt-BR!2sbr" width="550" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> <!--próprio IFrame (site dentro de um site) gerado pelo google maps-->
             <div>
@@ -73,6 +47,6 @@
     
     </footer>
 
-    <script src="./AdicionarLobinho/PaginaAdicionarLobinho.js"></script>
+  <script src="showLobinho/showLobinho.js"></script>
 </body>
 </html>
