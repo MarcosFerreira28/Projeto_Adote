@@ -31,13 +31,22 @@ function AdotaLobo(){
     lobo.idadeDono = parseInt(idade.value);
     lobo.nomeDono = nome.value;
     lobo.adotado = true;
-
+    /*-------------Validando Nome----------------------*/
+    if (!/^[A-Za-zÀ-ÿ\s]{2,}$/.test(lobo.nomeDono)) {
+        alert("O nome deve conter apenas letras e ter pelo menos 2 caracteres.");
+    }
+    /*-------------Validando Idade----------------------*/
     if (!Number.isInteger(lobo.idadeDono)){
         alert("Idade deve ser um inteiro!");
         window.location.href="PaginaAdotarLobinho.html?id=" + lobo.id;
         return
     }
-
+    /*-------------Validando Email----------------------*/
+    const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!regexEmail.test(lobo.emailDono)) {
+        alert("Digite um e-mail válido.");
+    }
+    /*-------------------------------------------------*/
     if (nome.value.trim() == "" || idade.value.trim() == "" || email.value.trim() == ""){
         return
     }

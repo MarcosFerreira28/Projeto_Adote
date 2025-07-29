@@ -2,7 +2,9 @@
     padding: 0;
     margin: 0;
 }
+@import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300;400;500;600;700;800;900&display=swap');
 
+/* ------------------------- HEADER ------------------------- */
 header{
     height: 130px;
     background-color: #85CDF5;
@@ -12,17 +14,112 @@ header{
 }
 
 header a{
+    position: relative;
+    display: inline-block;
     font-size: 30px;
     font-weight: 700;
     text-decoration: none;
     color: #333333;
+    padding-bottom: 5px;
+}
+header a.navlink::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background-color: #333333;
+    transition: width 0.5s ease-in-out;
 }
 
-header a:hover{
-    text-decoration: underline;
-    
+header a.navlink:hover::after {
+    width: 100%;
 }
 
+main {
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    background-color: #FAFAFA;
+    min-height: 600px;
+}
+
+.lobo-detalhe {
+    background-color: #ffffff;
+    padding: 32px;
+    border-radius: 16px;
+    width: 800px;
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    font-family: 'Segoe UI', sans-serif;
+    text-align: center;
+}
+
+.lobo-detalhe h1 {
+    font-size: 36px;
+    color: #333333;
+}
+
+.lobo-detalhe img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+}
+
+.lobo-detalhe p {
+    font-size: 18px;
+    color: #444444;
+    line-height: 1.6;
+    max-width: 640px;
+}
+
+
+
+.lobo-detalhe .btn-adotar,
+.lobo-detalhe .btn-excluir {
+    font-size: 18px;
+    font-weight: 700;
+    padding: 12px 32px;
+    margin: 10px 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.lobo-detalhe .btn-adotar {
+    background-color: #85CDF5;
+    color: #333333;
+}
+
+.lobo-detalhe .btn-adotar:hover {
+    background-color: #6cb6e0;
+    transform: translateY(-1px);
+}
+
+.lobo-detalhe .btn-excluir {
+    background-color: #f26c6c;
+    color: #ffffff;
+}
+
+.lobo-detalhe .btn-excluir:hover {
+    background-color: #d14a4a;
+    transform: translateY(-1px);
+}
+
+/* -------------------------footer ------------------------- */
+hr {
+    height: 5px;
+    border: none;
+    background: linear-gradient(to right, #DEB959, #2C5680);
+}
 footer {
     height: 270px;
     display: flex;
@@ -111,82 +208,3 @@ footer div {
     padding-bottom: 10px;
 }
 
-
-
-
-main {
-    padding: 40px;
-    display: flex;
-    justify-content: center;
-    background-color: #FAFAFA;
-    min-height: 600px;
-}
-
-.lobo-detalhe {
-    background-color: #ffffff;
-    padding: 32px;
-    border-radius: 16px;
-    width: 800px;
-    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 24px;
-    font-family: 'Segoe UI', sans-serif;
-    text-align: center;
-}
-
-.lobo-detalhe h1 {
-    font-size: 36px;
-    color: #333333;
-}
-
-.lobo-detalhe img {
-    width: 100%;
-    max-width: 500px;
-    height: auto;
-    object-fit: cover;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
-}
-
-.lobo-detalhe p {
-    font-size: 18px;
-    color: #444444;
-    line-height: 1.6;
-    max-width: 640px;
-}
-
-
-
-.lobo-detalhe .btn-adotar,
-.lobo-detalhe .btn-excluir {
-    font-size: 18px;
-    font-weight: 700;
-    padding: 12px 32px;
-    margin: 10px 12px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.2s ease, transform 0.1s ease;
-}
-
-.lobo-detalhe .btn-adotar {
-    background-color: #85CDF5;
-    color: #333333;
-}
-
-.lobo-detalhe .btn-adotar:hover {
-    background-color: #6cb6e0;
-    transform: translateY(-1px);
-}
-
-.lobo-detalhe .btn-excluir {
-    background-color: #f26c6c;
-    color: #ffffff;
-}
-
-.lobo-detalhe .btn-excluir:hover {
-    background-color: #d14a4a;
-    transform: translateY(-1px);
-}
