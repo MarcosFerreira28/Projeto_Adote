@@ -9,15 +9,6 @@ let botao = document.querySelector("#salvar")
 
 function InsereLobo(event) {
     event.preventDefault();
-    if (
-        nome.value.trim() === "" ||
-        idade.value.trim() === "" ||
-        link.value.trim() === "" ||
-        descricao.value.trim() === ""
-    ) {
-        alert("Por favor, preencha todos os campos!");
-        return;
-    }
 
     // Validação da idade
     const idadeNum = Number(idade.value);
@@ -39,6 +30,11 @@ function InsereLobo(event) {
         return;
     }
 
+    if (descricao.value.trim() == ""){
+        alert("Insira uma descrição!");
+        return;
+    }
+
     let insere = {
         id: lobos.length + 1,
         nome: nome.value,
@@ -55,7 +51,7 @@ function InsereLobo(event) {
     localStorage.setItem("lobos", JSON.stringify(lobos));
     alert("Lobinho adicionado com sucesso!");
 
-    // Opcional: limpar campos após sucesso
+    //esvaziando os campos caso queira adicionar mais um lobo
     nome.value = "";
     idade.value = "";
     link.value = "";
