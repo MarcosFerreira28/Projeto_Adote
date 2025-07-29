@@ -30,6 +30,7 @@ function AdotaLobo(){
     lobo.emailDono = email.value;
     lobo.idadeDono = parseInt(idade.value);
     lobo.nomeDono = nome.value;
+    lobo.adotado = true;
 
     if (!Number.isInteger(lobo.idadeDono)){
         alert("Idade deve ser um inteiro!");
