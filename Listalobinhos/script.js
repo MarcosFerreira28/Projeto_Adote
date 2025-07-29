@@ -43,20 +43,12 @@ const estado = {
 estado.filtroAdotados = false;
 
 let controls = {
-    avancar() {
-        estado.pagina++;
-        let ultimaPagina = estado.pagina > estado.totalPagina;
-        if (ultimaPagina) {
-            estado.pagina--;
-        }
+    avancarFinal() {
+        estado.pagina = estado.totalPagina
         update();
     },
-    voltar() {
-        estado.pagina--;
-        let primeiraPagina = estado.pagina < 1;
-        if (primeiraPagina) {
-            estado.pagina++;
-        }
+    voltarFinal() {
+        estado.pagina = 1;
         update();
     },
     filtrar() {
@@ -71,8 +63,8 @@ let controls = {
         update();
     },
     eventoClickar() {
-        pegar("#avancar").addEventListener("click", controls.avancar);//Botão de Avançar
-        pegar("#voltar").addEventListener("click", controls.voltar);//Botão de Voltar
+        pegar("#avancar").addEventListener("click", controls.avancarFinal);//Botão de Avançar
+        pegar("#voltar").addEventListener("click", controls.voltarFinal);//Botão de Voltar
         pegar("#filtroAdotados").addEventListener("click", controls.filtrar);//Botão de Filtro de adoção
         pegar("#buscaNome").addEventListener("keyup", (e) => {
             if (e.key === "Enter") {
@@ -80,7 +72,7 @@ let controls = {
             }
         });//Apertar enter para filtrar
         pegar("#btnAdicionarLobinho").addEventListener("click", () => {
-            window.open("formulario.html", "_blank");
+            window.open("PaginaAdicionarLobinho.html", "_blank");
         });//Botão de +adicionar para levar a outra pagina
         pegar("#filtroAdotados").addEventListener("click", () => {
             const botao = pegar("#filtroAdotados")
@@ -181,8 +173,8 @@ const botões = {
         botao.innerHTML = numeroPagina;
 
         if (numeroPagina === estado.pagina) {
-        botao.classList.add('ativo');
-    }
+            botao.classList.add('ativo');
+        }
 
         botao.addEventListener("click", () => {
             estado.pagina = numeroPagina;
@@ -192,16 +184,31 @@ const botões = {
         pegar("#exibir").appendChild(botao)
 
     },
+
+    criarReticencias() {
+        const span = document.createElement('span');
+        span.classList.add('reticencias');
+        span.textContent = "...";
+        pegar("#exibir").appendChild(span);
+    },
     update() {
-        let limpar = pegar("#exibir")
-        limpar.innerHTML = ""
-        const { maxEsquerdo, maxDireito } = botões.calcularMaximoVisivel()
-        for (let pagina = maxEsquerdo; pagina <= maxDireito; pagina++) {
-            botões.criar(pagina)
+        const container = pegar("#exibir");
+        container.innerHTML = "";
+        const { maxEsquerdo, maxDireito } = botões.calcularMaximoVisivel();
+
+        if (maxEsquerdo > 1) {
+            botões.criar(1);
+            botões.criarReticencias();
         }
 
+        for (let pagina = maxEsquerdo; pagina <= maxDireito; pagina++) {
+            botões.criar(pagina);
+        }
 
-
+        if (maxDireito < estado.totalPagina) {
+            botões.criarReticencias();
+            botões.criar(estado.totalPagina);
+        }
     },
 
     calcularMaximoVisivel() {

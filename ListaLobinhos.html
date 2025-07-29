@@ -10,7 +10,7 @@
 
 <body>
     <header>
-        <a href="PaginaListaLobinhos">Nossos Lobinhos</a>
+        <a href="ListaLobinhos.html">Nossos Lobinhos</a>
         <a href="PaginaHome"><img src="/assets/loboicon.png" alt="Lobinho"></a>
         <a href="PaginaQuemSomos">Quem Somos</a>
     </header>
@@ -19,7 +19,7 @@
         <section class="caixa">
             <div class="filtro">
                 <div class="pesquisar">
-                    <img src="/assets/lupaCao.png" alt="">
+                    <img class="lupinha" src="/assets/lupaCao.png" alt="">
                     <input type="text" id="buscaNome" placeholder=" Digite o nome do lobinho...">
                 </div>
                 <button id="btnAdicionarLobinho">+ Adiciona</button>
@@ -37,11 +37,11 @@
 
             <div class="botao">
                 <div id="voltar">
-                    <</div>
+                    &lt;&lt;</div>
                         <div id="atual">
                             <div id="exibir">1</div>
                         </div>
-                        <div id="avancar">></div>
+                        <div id="avancar">&gt;&gt;</div>
 
 
 
@@ -50,6 +50,7 @@
     </main>
 
     <footer>
+        <span class="esquerda">
         <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3675.1873241132716!2d-43.135835125815646!3d-22.906460537857185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x99817e444e692b%3A0xfd5e35fb577af2f5!2sUFF%20-%20Instituto%20de%20Computa%C3%A7%C3%A3o!5e0!3m2!1spt-BR!2sbr!4v1753148190660!5m2!1spt-BR!2sbr"
             width="550" height="400" style="border:0;" allowfullscreen="" loading="lazy"
@@ -75,8 +76,9 @@
                 <a href="PaginaQuemSomos">Quem Somos</a>
             </div>
         </div>
+        </span>
 
-        <span>
+        <span class="direita">
             <p>Desenvolvido com</p>
             <img src="/assets/paws.png" alt="Foto com patas">
         </span>
