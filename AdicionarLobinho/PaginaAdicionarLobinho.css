@@ -81,6 +81,14 @@ main {
     color: black;
 }
 
+#salvar{
+    cursor: pointer;
+}
+
+input, textarea{
+    font-size: 20px;
+}
+
 .nome input {
     height: 39px;
     background-color: #E6E6E6;

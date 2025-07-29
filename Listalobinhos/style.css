@@ -96,13 +96,18 @@ main {
 /*Parte do filtro de adoção*/
 
 .adocao {
+    margin: 0 auto;
     margin-top: 15px;
     font-size: 18px;
     display: flex;
     align-items: center;
+    justify-content: center;
+    display: flex;
     gap: 35px;
-    margin-left: 24%
+    width: 58rem;
+    justify-content: flex-start;
 }
+
 
 .adocao #filtroAdotados {
     width: 30px;
