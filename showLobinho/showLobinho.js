@@ -3,27 +3,25 @@ function inicializarLocalStorage() {
     .then(response => response.json())
     .then(data => {
       localStorage.setItem("lobos", JSON.stringify(data));
-      exibirLobo(); r
+      exibirLobo();
     })
     .catch(error => {
       console.error("Erro ao carregar lobinhos:", error);
     });
 }
 
-
 function exibirLobo() {
-  let lobos = JSON.parse(localStorage.getItem("lobos")) || [];
-
+  const lobos = JSON.parse(localStorage.getItem("lobos")) || [];
   const params = new URLSearchParams(window.location.search);
   const id = parseInt(params.get("id"));
   const lobo = lobos.find(l => l.id === id);
 
   const container = document.getElementById("detalhes-lobinho");
-  container.innerHTML = ""; 
+  container.innerHTML = "";
 
   if (!lobo) {
     const erro = document.createElement("section");
-    erro.classList.add("lobo-detalhe");
+    erro.classList.add("lobo-info");
 
     const titulo = document.createElement("h1");
     titulo.innerText = "Lobinho não encontrado";
@@ -44,16 +42,45 @@ function exibirLobo() {
     return;
   }
 
- 
-  const section = document.createElement("section");
-  section.classList.add("lobo-detalhe");
+  const wrapper = document.createElement("div");
+  wrapper.classList.add("lobo-container");
 
-  const titulo = document.createElement("h1");
-  titulo.innerText = lobo.nome;
+  // Coluna da esquerda: imagem + botões
+  const esquerda = document.createElement("div");
+  esquerda.classList.add("lobo-foto");
 
   const imagem = document.createElement("img");
   imagem.src = lobo.imagem;
   imagem.alt = lobo.nome;
+  esquerda.appendChild(imagem);
+
+  const botoes = document.createElement("div");
+  botoes.classList.add("botoes");
+
+  const btnAdotar = document.createElement("button");
+  btnAdotar.classList.add("btn-adotar");
+  btnAdotar.innerText = "Adotar";
+  btnAdotar.addEventListener("click", () => {
+    window.location.href = `PaginaAdotarLobinho.html?id=${lobo.id}`;
+  });
+
+  const btnExcluir = document.createElement("button");
+  btnExcluir.classList.add("btn-excluir");
+  btnExcluir.innerText = "Excluir";
+  btnExcluir.addEventListener("click", () => {
+    excluirLobo(lobo.id);
+  });
+
+  botoes.appendChild(btnAdotar);
+  botoes.appendChild(btnExcluir);
+  esquerda.appendChild(botoes);
+
+  // Coluna da direita: textos
+  const direita = document.createElement("div");
+  direita.classList.add("lobo-info");
+
+  const titulo = document.createElement("h1");
+  titulo.innerText = lobo.nome;
 
   const idade = document.createElement("p");
   idade.innerHTML = `<strong>Idade:</strong> ${lobo.idade} anos`;
@@ -61,37 +88,20 @@ function exibirLobo() {
   const descricao = document.createElement("p");
   descricao.innerText = lobo.descricao;
 
-  section.appendChild(titulo);
-  section.appendChild(imagem);
-  section.appendChild(idade);
-  section.appendChild(descricao);
+  direita.appendChild(titulo);
+  direita.appendChild(idade);
+  direita.appendChild(descricao);
 
   if (lobo.adotado) {
     const adotado = document.createElement("p");
     adotado.innerHTML = `<strong>Adotado por:</strong> ${lobo.nomeDono} (${lobo.idadeDono} anos) - ${lobo.emailDono}`;
-    section.appendChild(adotado);
-  } else {
-    const btnAdotar = document.createElement("button");
-    btnAdotar.classList.add("btn-adotar");
-    btnAdotar.innerText = "Adotar";
-    btnAdotar.addEventListener("click", () => {
-      window.location.href = `PaginaAdotarLobinho.html?id=${lobo.id}`;
-    });
-
-    const btnExcluir = document.createElement("button");
-    btnExcluir.classList.add("btn-excluir");
-    btnExcluir.innerText = "Excluir";
-    btnExcluir.addEventListener("click", () => {
-      excluirLobo(lobo.id);
-    });
-
-    section.appendChild(btnAdotar);
-    section.appendChild(btnExcluir);
+    direita.appendChild(adotado);
   }
 
-  container.appendChild(section);
+  wrapper.appendChild(esquerda);
+  wrapper.appendChild(direita);
+  container.appendChild(wrapper);
 }
-
 
 function excluirLobo(id) {
   let lobos = JSON.parse(localStorage.getItem("lobos")) || [];

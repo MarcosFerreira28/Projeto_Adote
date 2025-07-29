@@ -1,6 +1,7 @@
 * {
-    padding: 0;
-    margin: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 header{
@@ -22,165 +23,182 @@ header a:hover{
     text-decoration: underline;
     
 }
-footer {
-    height: 270px;
-    display: flex;
-    flex-direction: row;
-    background-color: #333333;
-    align-items: center;
-    justify-content: center;
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #FAFAFA;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
+main {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  background-color: #FAFAFA;
+}
+
+.lobo-container {
+  display: flex;
+  width: 1001px;
+  height: 530px;
+  margin-top: 272px;
+  gap: 24px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.lobo-foto {
+  width: 654px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.lobo-foto img {
+  width: 654px;
+  height: 436px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 16px;
+
+}
+
+.botoes {
+   display: flex;
+  gap: 24px;
+  margin-top: 0;
+  }
+.btn-adotar,
+.btn-excluir {
+  font-size: 18px;
+  font-weight: 700;
+  padding: 14px 36px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease; 
+ }
+
+.btn-adotar {
+  background-color: #6cc070;
+  color: white;
+}
+
+.btn-adotar:hover {
+  background-color: #58a75c;
+}
+
+.btn-excluir {
+  background-color: #f26c6c;
+  color: white;
+}
+
+.btn-excluir:hover {
+  background-color: #d14a4a;
+}
+
+.lobo-info {
+  width: 478px;
+  font-size: 24px;
+  line-height: 20px;
+  color: #444;
+}
+
+.lobo-info h1 {
+  font-size: 42px;
+  margin: 0 0 16px 0;
+  color: #000;
+}
+
+.lobo-info p {
+  font-size: 16px;
+  color: #444;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+footer {
+  height: 270px;
+  display: flex;
+  flex-direction: row;
+  background-color: #333333;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: auto;
+}
+
+/* Mantém seu estilo anterior de footer */
 footer iframe {
-    width: 250px;
-    height: 168px;
-    padding-right: 30px;
+  width: 250px;
+  height: 168px;
+  padding-right: 30px;
 }
 
 footer div {
-    height: 168px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding-right: 70px;
+  height: 168px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-right: 70px;
 }
 
 .contato {
-    width: 378px;
-    height: 102px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    
+  width: 378px;
+  height: 102px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 .contato div {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    padding-right: 0px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .contato div img {
-    width: 19px;
-    height: 19px;
-    margin-right: 8px;
+  width: 19px;
+  height: 19px;
+  margin-right: 8px;
 }
 
-.contato div p{
-    font-size: 18px;
-    font-weight: 400;
-    color: #FFFFFF;
+.contato div p {
+  font-size: 18px;
+  font-weight: 400;
+  color: #FFFFFF;
 }
 
-.quemsomos{
-    width: 144px;
-    height: 30px;
-    background-color: #DEB959;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-right: 0px;
+.quemsomos {
+  width: 144px;
+  height: 30px;
+  background-color: #DEB959;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .quemsomos a {
-    font-size: 23px;
-    font-weight: 700;
-    color: #353535;
-    text-decoration: none;
+  font-size: 23px;
+  font-weight: 700;
+  color: #353535;
+  text-decoration: none;
 }
 
 footer span {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 33px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 33px;
 }
 
 footer span p {
-    font-size: 18px;
-    color: #FFFFFF;
-    font-weight: 400;
-    padding-bottom: 10px;
-}
-
-
-
-
-main {
-    padding: 40px;
-    display: flex;
-    justify-content: center;
-    background-color: #FAFAFA;
-    min-height: 600px;
-}
-
-.lobo-detalhe {
-    background-color: #ffffff;
-    padding: 32px;
-    border-radius: 16px;
-    width: 800px;
-    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 24px;
-    font-family: 'Segoe UI', sans-serif;
-    text-align: center;
-}
-
-.lobo-detalhe h1 {
-    font-size: 36px;
-    color: #333333;
-}
-
-.lobo-detalhe img {
-    width: 100%;
-    max-width: 500px;
-    height: auto;
-    object-fit: cover;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
-}
-
-.lobo-detalhe p {
-    font-size: 18px;
-    color: #444444;
-    line-height: 1.6;
-    max-width: 640px;
-}
-
-
-
-.lobo-detalhe .btn-adotar,
-.lobo-detalhe .btn-excluir {
-    font-size: 18px;
-    font-weight: 700;
-    padding: 12px 32px;
-    margin: 10px 12px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.2s ease, transform 0.1s ease;
-}
-
-.lobo-detalhe .btn-adotar {
-    background-color: #85CDF5;
-    color: #333333;
-}
-
-.lobo-detalhe .btn-adotar:hover {
-    background-color: #6cb6e0;
-    transform: translateY(-1px);
-}
-
-.lobo-detalhe .btn-excluir {
-    background-color: #f26c6c;
-    color: #ffffff;
-}
-
-.lobo-detalhe .btn-excluir:hover {
-    background-color: #d14a4a;
-    transform: translateY(-1px);
+  font-size: 18px;
+  color: #FFFFFF;
+  font-weight: 400;
+  padding-bottom: 10px;
 }
