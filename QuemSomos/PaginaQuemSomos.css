@@ -19,6 +19,7 @@ header a{
     text-decoration: none;
     color: #333333;
     padding-bottom: 5px;
+    font-family: 'Darker Grotesque', sans-serif;
 }
 header a.navlink::after {
     content: "";
@@ -48,6 +49,7 @@ main h1 {
     font-size: 48px;
     font-weight: 400;
     padding-left: 55px;
+    font-family: Roboto;
 }
 
 main p {
@@ -56,6 +58,7 @@ main p {
     font-weight: 400;
     text-align: center;
     padding-left: 55px;
+    font-family: 'Darker Grotesque', sans-serif;
 }
 
 
