@@ -42,70 +42,62 @@ function exibirLobo() {
     return;
   }
 
-  // WRAPPER PRINCIPAL (título + container)
+  
   const wrapper = document.createElement("div");
   wrapper.classList.add("lobo-wrapper");
 
-  // TÍTULO CENTRALIZADO
   const titulo = document.createElement("h1");
   titulo.classList.add("titulo-lobo");
   titulo.innerText = lobo.nome;
   wrapper.appendChild(titulo);
 
-  // CONTAINER EM DUAS COLUNAS
+ 
   const loboContainer = document.createElement("div");
   loboContainer.classList.add("lobo-container");
 
-  // COLUNA ESQUERDA (imagem + botões)
+ 
   const colunaEsquerda = document.createElement("div");
   colunaEsquerda.classList.add("lobo-foto");
 
   const imagemWrapper = document.createElement("div");
   imagemWrapper.classList.add("imagem-wrapper");
 
-const imagem = document.createElement("img");
-imagem.src = lobo.imagem;
-imagem.alt = lobo.nome;
+  const imagem = document.createElement("img");
+  imagem.src = lobo.imagem;
+  imagem.alt = lobo.nome;
+  imagemWrapper.appendChild(imagem);
 
-imagemWrapper.appendChild(imagem);
-colunaEsquerda.appendChild(imagemWrapper);
+  colunaEsquerda.appendChild(imagemWrapper);
 
-//
   if (!lobo.adotado) {
-  const botoes = document.createElement("div");
-  botoes.classList.add("botoes");
+    const botoes = document.createElement("div");
+    botoes.classList.add("botoes");
 
-  const btnAdotar = document.createElement("button");
-  btnAdotar.classList.add("btn-adotar");
-  btnAdotar.innerText = "Adotar";
-  btnAdotar.addEventListener("click", () => {
-    window.location.href = `PaginaAdotarLobinho.html?id=${lobo.id}`;
-  });
+    const btnAdotar = document.createElement("button");
+    btnAdotar.classList.add("btn-adotar");
+    btnAdotar.innerText = "Adotar";
+    btnAdotar.addEventListener("click", () => {
+      window.location.href = `PaginaAdotarLobinho.html?id=${lobo.id}`;
+    });
 
-  const btnExcluir = document.createElement("button");
-  btnExcluir.classList.add("btn-excluir");
-  btnExcluir.innerText = "Excluir";
-  btnExcluir.addEventListener("click", () => {
-    excluirLobo(lobo.id);
-  });
+    const btnExcluir = document.createElement("button");
+    btnExcluir.classList.add("btn-excluir");
+    btnExcluir.innerText = "Excluir";
+    btnExcluir.addEventListener("click", () => {
+      excluirLobo(lobo.id);
+    });
 
-  botoes.appendChild(btnAdotar);
-  botoes.appendChild(btnExcluir);
-  colunaEsquerda.appendChild(botoes);
-}
+    botoes.appendChild(btnAdotar);
+    botoes.appendChild(btnExcluir);
+    colunaEsquerda.appendChild(botoes);
+  }
 
-//
-  // COLUNA DIREITA (idade + descrição + adoção)
+  
   const colunaDireita = document.createElement("div");
   colunaDireita.classList.add("lobo-info");
 
-  const idade = document.createElement("p");
-  idade.innerHTML = `<strong>Idade:</strong> ${lobo.idade} anos`;
-
   const descricao = document.createElement("p");
   descricao.innerText = lobo.descricao;
-
-  colunaDireita.appendChild(idade);
   colunaDireita.appendChild(descricao);
 
   if (lobo.adotado) {
@@ -114,11 +106,10 @@ colunaEsquerda.appendChild(imagemWrapper);
     colunaDireita.appendChild(adotado);
   }
 
-  // Monta as colunas no container
+  
   loboContainer.appendChild(colunaEsquerda);
   loboContainer.appendChild(colunaDireita);
 
-  // Monta o wrapper com título + container
   wrapper.appendChild(loboContainer);
   container.appendChild(wrapper);
 }
