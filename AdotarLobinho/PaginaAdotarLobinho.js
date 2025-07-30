@@ -1,10 +1,3 @@
-const params = new URLSearchParams(window.location.search);
-const idLobo = parseInt(params.get("id"));
-
-let lobos = JSON.parse(localStorage.getItem("lobos"));
-
-let formulario = document.querySelector(".formulario");
-
 function ColocaDadosLobo(){
     let lobo = lobos.find(l => l.id === idLobo);
 
@@ -35,14 +28,12 @@ function AdotaLobo(){
     /*-------------Validando Nome----------------------*/
     if (!/^[A-Za-zÀ-ÿ\s]{2,}$/.test(lobo.nomeDono)) {
         alert("O nome deve conter apenas letras e ter pelo menos 2 caracteres.");
-        window.location.href="PaginaAdotarLobinho.html?id=" + lobo.id;
         return
     }
 
     /*-------------Validando Idade----------------------*/
-    if (!Number.isInteger(lobo.idadeDono)){
-        alert("Idade deve ser um inteiro!");
-        window.location.href="PaginaAdotarLobinho.html?id=" + lobo.id;
+    if (!Number.isInteger(lobo.idadeDono) || lobo.idadeDono < 1){
+        alert("Idade deve ser um inteiro e deve ter pelo menos 1 ano!");
         return
     }
 
@@ -50,22 +41,30 @@ function AdotaLobo(){
     const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!regexEmail.test(lobo.emailDono)) {
         alert("Digite um e-mail válido.");
-        window.location.href="PaginaAdotarLobinho.html?id=" + lobo.id;
         return
     }
-
     /*-------------------------------------------------*/
+    if (lobo.nomeDono.trim() == "" || lobo.emailDono.trim() == ""){
+        alert("Nenhum dos campos pode ficar vazio!")
+        return
+    }
 
     localStorage.setItem("lobos", JSON.stringify(lobos))
     
     window.location.href="ListaLobinhos.html";
 }
 
+const params = new URLSearchParams(window.location.search);
+const idLobo = parseInt(params.get("id"));
+
+let lobos = JSON.parse(localStorage.getItem("lobos"));
+
+let botao = document.querySelector("#botao")
+
 ColocaDadosLobo()
 
-formulario.addEventListener("submit", function(event) {
+botao.addEventListener("click", function(event) {
 
     event.preventDefault();
-
     AdotaLobo();
 })

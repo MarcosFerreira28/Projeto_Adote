@@ -83,9 +83,9 @@ main {
 
 .botoes {
    display: flex;
-  gap: 38px;
-  margin-top: 0;
-    justify-content: center;
+    gap: 38px;
+    margin-top: 2rem;
+    justify-content: space-evenly;
     width: 90%;
     
 }

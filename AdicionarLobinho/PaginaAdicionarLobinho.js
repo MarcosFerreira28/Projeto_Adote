@@ -36,7 +36,7 @@ function InsereLobo(event) {
     }
 
     let insere = {
-        id: lobos.length + 1,
+        id: lobos[lobos.length - 1].id + 1,
         nome: nome.value,
         idade: idade.value,
         descricao: descricao.value,
